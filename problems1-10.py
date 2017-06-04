@@ -1,3 +1,5 @@
+import math
+
 def problem1():
     curr = 1
     sumMul = 0
@@ -24,3 +26,21 @@ def problem2():
         curr = nextN
 
     print(sumEven)
+
+    
+    
+def problem3():
+    num = 600851475143
+    div = 2
+    biggestPrime = 0
+
+    while div < math.sqrt(num):
+        while num % div == 0:
+            num //= div
+        div += 1
+
+    if num > 1:
+        biggestPrime = num
+
+    print(biggestPrime)
+
