@@ -44,3 +44,20 @@ def problem3():
 
     print(biggestPrime)
 
+
+def problem4():
+    maxProduct = 0
+   
+    for x in range (1, 1000):
+        for y in range (1, 1000):
+            product = x * y
+            productBackwards = (str(product))[::-1]
+            ifPalindrome = False
+            
+            ifPalindrome = True if str(product) == productBackwards else False
+            
+            if (ifPalindrome and product > maxProduct):
+                print("new maxprod")
+                maxProduct = product              
+                
+    print(str(maxProduct))     
