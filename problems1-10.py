@@ -60,4 +60,41 @@ def problem4():
                 print("new maxprod")
                 maxProduct = product              
                 
-    print(str(maxProduct))     
+    print(str(maxProduct))    
+    
+
+
+def problem7():
+    primes = [2, 3]
+    primesCounter = 2
+
+    def checkIfPrime(number, divider):
+
+      global primesCounter
+
+      if number % divider != 0:
+        divider += 2
+        if divider <= math.sqrt(number):
+          checkIfPrime(number, divider)
+        else:
+          # print(number)
+          primesCounter += 1
+          primes.append(number)
+          # print("primesCounter: ", str(primesCounter))
+
+            
+    def findNthPrime():
+      divider = 3
+      # primesCounter = 1
+
+      for number in range(3, 100000000):
+        if number % 2 != 0 and primesCounter < 10001:
+            # print("heyy")
+            checkIfPrime(number, divider)
+
+      print("primesCounter: ", str(primesCounter))
+      print("primes: ", primes)
+
+    findNthPrime()
+
+
